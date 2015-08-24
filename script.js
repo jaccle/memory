@@ -66,7 +66,7 @@ function unhide() {
             var congrats = document.createElement("h2");
             congrats.innerText = "Congratulations! You won!";
             congrats.style.textAlign = "center";
-            document.body.appendChild(congrats);
+            document.getElementsByTagName("h1")[0].appendChild(congrats);
             x += 1;
             document.getElementsByTagName("h4")[0].innerText = "Wins: " + x;
             document.getElementById("reset").value = "Play again?";
@@ -84,7 +84,7 @@ function reset() {
          cells[i].classList.add("hidden");
       }
       if (document.getElementsByTagName("h2").length === 1){
-         document.body.removeChild(document.getElementsByTagName("h2")[0]);
+         document.getElementsByTagName("h1")[0].removeChild(document.getElementsByTagName("h2")[0]);
       }
       shuffle();
       document.getElementById("reset").value = "Reset";
