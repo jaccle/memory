@@ -21,6 +21,7 @@ h2 {
    font-family: 'Londrina Solid', cursive;
    color:darkblue;
    text-align: center;
+   object-position: center;
    text-shadow: 3px 2px rgba(218,112,150, .6);
    top: 30%;
    position: fixed;

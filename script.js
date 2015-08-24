@@ -68,6 +68,7 @@ function unhide() {
          if (document.getElementsByClassName("hidden").length === 0) {
             var congrats = document.createElement("h2");
             congrats.innerText = "Congratulations! You won!";
+            congrats.style.textAlign = "center";
             document.body.appendChild(congrats);
             x += 1;
             document.getElementsByTagName("h4")[0].innerText = "Wins: " + x;
