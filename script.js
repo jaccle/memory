@@ -5,16 +5,7 @@ var icons = ['<img src="game-icons/brain.png" alt="brain" class="brain">',
       '<img src="game-icons/quiz.png" alt="quiz" class="quiz">',
       '<img src="game-icons/Scrabble.png" alt="tile" class="scrabble">',
       '<img src="game-icons/spade.png" alt="spade" class="spade">',
-      '<img src="game-icons/TTT.png" alt="tictactoe" class="tictac">',
-         '<img src="game-icons/brain.png" alt="brain" class="brain">',
-      '<img src="game-icons/chess.png" alt="chess" class="chess">',
-      '<img src="game-icons/dice.png" alt="dice" class="dice">',
-      '<img src="game-icons/Puzzle.png" alt="puzzle" class="puzzle">',
-      '<img src="game-icons/quiz.png" alt="quiz" class="quiz">',
-      '<img src="game-icons/Scrabble.png" alt="tile" class="scrabble">',
-      '<img src="game-icons/spade.png" alt="spade" class="spade">',
-      '<img src="game-icons/TTT.png" alt="tictactoe" class="tictac">', ];
-var getIcons = document.getElementsByTagName("img");
+      '<img src="game-icons/TTT.png" alt="tictactoe" class="tictac">']
 var cells = document.getElementsByTagName("td");
 var hidden = document.getElementsByClassName("hidden");
 var x = 0;
@@ -34,6 +25,9 @@ var matches = 0;
 //randomize images
 //assign images to td
 function shuffle() {
+   for (var i = 0; i < 8; i++) {
+      icons.push(icons[i]);
+   }
    icons = _.shuffle(icons);
    for (var i = 0; i < cells.length; i++) {
       cells[i].innerHTML = icons[i];
