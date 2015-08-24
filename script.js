@@ -28,7 +28,7 @@ function shuffle() {
    icons = _.shuffle(icons);
    for (var i = 0; i < cells.length; i++) {
       cells[i].innerHTML = icons[i];
-      console.log(cells[i].id + ":" + icons[i]);
+      console.log(cells[i].id + ":" + document.getElementsByTagName("img")[i].className);
    }
 }
 
@@ -90,7 +90,6 @@ function reset() {
       document.getElementById("reset").value = "Reset";
       matches = 0;
       document.getElementsByTagName("h3")[0].innerText = "Matched pairs: " + matches+"/8";
-      console.log(icons.length);
    });
 }
 
@@ -99,6 +98,7 @@ function reset() {
 
 
 window.onload = function () {
+   console.log("Javascript is working");
    for (var i = 0; i < 8; i++) {
       icons.push(icons[i]);
    }
