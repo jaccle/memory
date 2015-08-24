@@ -25,9 +25,6 @@ var matches = 0;
 //randomize images
 //assign images to td
 function shuffle() {
-   for (var i = 0; i < 8; i++) {
-      icons.push(icons[i]);
-   }
    icons = _.shuffle(icons);
    for (var i = 0; i < cells.length; i++) {
       cells[i].innerHTML = icons[i];
@@ -86,11 +83,14 @@ function reset() {
       for (var i = 0; i < cells.length; i++) {
          cells[i].classList.add("hidden");
       }
-      document.body.removeChild(document.getElementsByTagName("h2")[0]);
+      if (document.getElementsByTagName("h2").length === 1){
+         document.body.removeChild(document.getElementsByTagName("h2")[0]);
+      }
       shuffle();
       document.getElementById("reset").value = "Reset";
       matches = 0;
       document.getElementsByTagName("h3")[0].innerText = "Matched pairs: " + matches+"/8";
+      console.log(icons.length);
    });
 }
 
@@ -99,7 +99,9 @@ function reset() {
 
 
 window.onload = function () {
-
+   for (var i = 0; i < 8; i++) {
+      icons.push(icons[i]);
+   }
    //   makeArray();
    shuffle();
    unhide();
